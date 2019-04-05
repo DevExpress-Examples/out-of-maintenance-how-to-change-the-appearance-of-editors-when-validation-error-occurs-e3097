@@ -1,7 +1,7 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [MainWindow.xaml](./CS/WPFCustomValidationErrorPresenter/MainWindow.xaml) (VB: [MainWindow.xaml.vb](./VB/WPFCustomValidationErrorPresenter/MainWindow.xaml.vb))
+* [MainWindow.xaml](./CS/WPFCustomValidationErrorPresenter/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/WPFCustomValidationErrorPresenter/MainWindow.xaml))
 * [MainWindow.xaml.cs](./CS/WPFCustomValidationErrorPresenter/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/WPFCustomValidationErrorPresenter/MainWindow.xaml.vb))
 * [EditorsCustomTemplates.xaml](./CS/WPFCustomValidationErrorPresenter/Themes/EditorsCustomTemplates.xaml) (VB: [EditorsCustomTemplates.xaml](./VB/WPFCustomValidationErrorPresenter/Themes/EditorsCustomTemplates.xaml))
 <!-- default file list end -->
