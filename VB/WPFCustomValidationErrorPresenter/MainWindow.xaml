@@ -4,30 +4,30 @@
         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
         xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
-        Title="Error presenter customization example" Height="400" Width="230">
+        Title="Error presenter customization example" Height="400" Width="230" >
 
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/WPFCustomValidationErrorPresenter;component/Themes/EditorsCustomTemplates.xaml" />
+                <ResourceDictionary Source="/WPFCustomValidationErrorPresenter;component/Themes/EditorsCustomTemplates.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
 
     <StackPanel Orientation="Horizontal" Margin="5,7">
         <StackPanel>
-            <TextBlock Text="TextEdit:" Margin="5,0" />
-            <dxe:TextEdit Name="TextEdit" TabIndex="0" Text="123456" Validate="textEdit_Validate" InvalidValueBehavior="AllowLeaveEditor" HorizontalAlignment="Left" Width="200" />
+            <TextBlock Text="TextEdit:" Margin="5,0"/>
+            <dxe:TextEdit Name="TextEdit" TabIndex="0" Text="123456" Validate="textEdit_Validate" InvalidValueBehavior="AllowLeaveEditor" HorizontalAlignment="Left" Width="200"/>
             <StackPanel Orientation="Horizontal" Height="15">
-                <TextBlock Text="Error type: " Visibility="{Binding ElementName=TextEdit, Path=HasValidationError, Converter={StaticResource BoolToVisibilityConverter}}" />
-                <TextBlock Text="{Binding ElementName=TextEdit, Path=ValidationError.ErrorType}" />
+                <TextBlock Text="Error type: " Visibility="{Binding ElementName=TextEdit, Path=HasValidationError, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                <TextBlock Text="{Binding ElementName=TextEdit, Path=ValidationError.ErrorType}"/>
             </StackPanel>
 
             <TextBlock Text="PasswordBoxEdit:" Margin="5,10,0,0" />
-            <dxe:PasswordBoxEdit Name="passwordBoxEdit1" Validate="textEdit_Validate" InvalidValueBehavior="AllowLeaveEditor" HorizontalAlignment="Left" Width="200" />
+            <dxe:PasswordBoxEdit Name="passwordBoxEdit1" Validate="textEdit_Validate" InvalidValueBehavior="AllowLeaveEditor" HorizontalAlignment="Left" Width="200"/>
             
             <TextBlock Text="ButtonEdit:" Margin="5,10,0,0" />
-            <dxe:ButtonEdit Validate="textEdit_Validate" InvalidValueBehavior="AllowLeaveEditor" Name="buttonEdit1" HorizontalAlignment="Left" Width="200" />
+            <dxe:ButtonEdit Validate="textEdit_Validate" InvalidValueBehavior="AllowLeaveEditor" Name="buttonEdit1" HorizontalAlignment="Left" Width="200"/>
             
             <TextBlock Text="ComboBoxEdit:" Margin="5,10,0,0" />
             <dxe:ComboBoxEdit Validate="textEdit_Validate" InvalidValueBehavior="AllowLeaveEditor" HorizontalAlignment="Left" Width="200">

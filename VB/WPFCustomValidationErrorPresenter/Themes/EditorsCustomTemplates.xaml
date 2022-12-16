@@ -7,14 +7,13 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     >
 
-    <dx:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    <dx:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
     
     <ControlTemplate x:Key="{dxet:TextEditThemeKey ResourceKey=Template}" TargetType="{x:Type dxe:TextEdit}">
         <ContentControl Template="{TemplateBinding ActualBorderTemplate}" x:Name="PART_Root" Focusable="False">
             <Grid SnapsToDevicePixels="True">
-                <dxe:EditorControl x:Name="PART_Content" 
-                                       Template="{TemplateBinding ActualEditorControlTemplate}" />
-                <Rectangle x:Name="ErrorBorder" RadiusX="2" RadiusY="2" StrokeThickness="2" />
+                <dxe:EditorControl x:Name="PART_Content" Template="{TemplateBinding ActualEditorControlTemplate}" />
+                <Rectangle x:Name="ErrorBorder" RadiusX="2" RadiusY="2" StrokeThickness="2"/>
             </Grid>
         </ContentControl>
         <ControlTemplate.Triggers>
@@ -37,20 +36,21 @@
         <ContentControl Template="{TemplateBinding ActualBorderTemplate}" x:Name="Border" Focusable="False">
             <DockPanel LastChildFill="True" SnapsToDevicePixels="True">
                 <Grid DockPanel.Dock="Left">
-                    <dxe:EditorControl x:Name="PART_Content" VerticalAlignment="Stretch" Template="{Binding Path=(dxe:BaseEdit.OwnerEdit).ActualEditorControlTemplate, RelativeSource={RelativeSource Self}}" />
-                    <TextBlock x:Name="PART_PasswordNullText"
+                    <dxe:EditorControl x:Name="PART_Content" VerticalAlignment="Stretch" Template="{Binding Path=(dxe:BaseEdit.OwnerEdit).ActualEditorControlTemplate, RelativeSource={RelativeSource Self}}"/>
+                    <TextBlock 
+                        x:Name="PART_PasswordNullText"
                         VerticalAlignment="Stretch"
                         Text="{Binding Path=NullText, RelativeSource={RelativeSource TemplatedParent}}"
                         Style="{DynamicResource {dxet:PasswordBoxEditThemeKey ResourceKey=NullTextEditorStyle}}">
                         <TextBlock.Visibility>
                             <Binding Path="IsNullTextVisible" RelativeSource="{RelativeSource TemplatedParent}">
                                 <Binding.Converter>
-                                    <BooleanToVisibilityConverter />
+                                    <BooleanToVisibilityConverter/>
                                 </Binding.Converter>
                             </Binding>
                         </TextBlock.Visibility>
                     </TextBlock>
-                    <Rectangle x:Name="ErrorBorder" RadiusX="2" RadiusY="2" StrokeThickness="2" />
+                    <Rectangle x:Name="ErrorBorder" RadiusX="2" RadiusY="2" StrokeThickness="2"/>
                 </Grid>
             </DockPanel>
         </ContentControl>
@@ -73,50 +73,50 @@
     <ControlTemplate x:Key="{dxet:ButtonEditThemeKey ResourceKey=Template}" TargetType="{x:Type dxe:ButtonEdit}">
         <ContentControl x:Name="PART_Root" Template="{TemplateBinding ActualBorderTemplate}" IsTabStop="False">
             <ContentControl.Resources>
-                <dx:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+                <dx:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
             </ContentControl.Resources>
 
             <Grid x:Name="ButtonEditGrid" SnapsToDevicePixels="True">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <!--<dxe:ErrorControl x:Name="PART_ErrorPresenter"/>-->
                 <dxe:ButtonsControl x:Name="PART_LeftButtons"
                                         Grid.Column="1"
                                         ItemsSource="{TemplateBinding LeftButtons}" 
-                                        Visibility="{Binding ShowEditorButtons, Converter={StaticResource BoolToVisibilityConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
+                                        Visibility="{Binding ShowEditorButtons, Converter={StaticResource BoolToVisibilityConverter}, RelativeSource={RelativeSource TemplatedParent}}"/>
                 <dxe:EditorControl x:Name="PART_Content" 
                                        VerticalAlignment="Stretch" 
                                        Grid.Column="2" 
                                        dx:FocusHelper2.Focusable="False" 
-                                       Template="{TemplateBinding ActualEditorControlTemplate}" />
+                                       Template="{TemplateBinding ActualEditorControlTemplate}"/>
                 <dxe:ButtonsControl x:Name="PART_RightButtons"
                                         Grid.Column="3"
                                         ItemsSource="{TemplateBinding RightButtons}" 
-                                        Visibility="{Binding ShowEditorButtons, Converter={StaticResource BoolToVisibilityConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
-                <Rectangle Grid.ColumnSpan="4" x:Name="ErrorBorder" RadiusX="2" RadiusY="2" StrokeThickness="2" />
+                                        Visibility="{Binding ShowEditorButtons, Converter={StaticResource BoolToVisibilityConverter}, RelativeSource={RelativeSource TemplatedParent}}"/>
+                <Rectangle Grid.ColumnSpan="4" x:Name="ErrorBorder" RadiusX="2" RadiusY="2" StrokeThickness="2"/>
             </Grid>
         </ContentControl>
         <ControlTemplate.Triggers>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
-                    <Condition Property="IsTextEditable" Value="true" />
-                    <Condition Property="EditMode" Value="Standalone" />
+                    <Condition Property="IsTextEditable" Value="true"/>
+                    <Condition Property="EditMode" Value="Standalone"/>
                 </MultiTrigger.Conditions>
                 <MultiTrigger.Setters>
-                    <Setter Property="Template" TargetName="PART_Content" Value="{Binding Path=EditTemplate, RelativeSource={RelativeSource TemplatedParent}}" />
+                    <Setter Property="Template" TargetName="PART_Content" Value="{Binding Path=EditTemplate, RelativeSource={RelativeSource TemplatedParent}}"/>
                 </MultiTrigger.Setters>
             </MultiTrigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
-                    <Condition Property="IsTextEditable" Value="false" />
-                    <Condition Property="EditMode" Value="Standalone" />
+                    <Condition Property="IsTextEditable" Value="false"/>
+                    <Condition Property="EditMode" Value="Standalone"/>
                 </MultiTrigger.Conditions>
                 <MultiTrigger.Setters>
-                    <Setter Property="Template" TargetName="PART_Content" Value="{Binding Path=EditNonEditableTemplate, RelativeSource={RelativeSource TemplatedParent}}" />
+                    <Setter Property="Template" TargetName="PART_Content" Value="{Binding Path=EditNonEditableTemplate, RelativeSource={RelativeSource TemplatedParent}}"/>
                 </MultiTrigger.Setters>
             </MultiTrigger>
             <DataTrigger Binding="{Binding Path=ValidationError.ErrorType, RelativeSource={RelativeSource Self}}" Value="Critical">
